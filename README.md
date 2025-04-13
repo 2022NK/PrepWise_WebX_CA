@@ -1,152 +1,176 @@
-# PrepWise 🎓
+# PrepWise - Career Preparation Platform
 
-A revolutionary platform to simplify exam preparation, resume building, and interview practice using AI-driven technologies.
+PrepWise is a career preparation and interview skills platform that helps users prepare for job interviews and develop their professional skills.
 
-## 🎯 Problem Statement
+## Project Overview
 
-Preparing for competitive exams, crafting professional resumes, practicing topic-specific MCQs, and preparing for interviews often lack:  
-- Personalization and efficiency.  
-- Tailored solutions that adapt to individual timelines, learning paces, and goals.  
-- Interactive tools to build candidates' confidence and readiness.  
+This project has been converted from a Node.js/Express/React stack to a Flask/MongoDB/React stack with TypeScript-like type annotations.
 
-PrepWise addresses these challenges by creating an all-in-one platform that enhances the preparation process with AI-driven technologies.
+### Technology Stack
 
-## 👥 Team Details
+#### Backend
+- Flask (Python)
+- MongoDB with PyMongo
+- JWT Authentication
+- Marshmallow for validation
 
-**Team Name:** Innovation Titans  
-**Team Members:**  
-- Aryan Patankar (VESIT, Mumbai)
-- Vaishnal Mali (VESIT, Mumbai)
-- Niraj Kothawade (VESIT, Mumbai)
+#### Frontend
+- React
+- TypeScript
+- Tailwind CSS
+- Axios for API requests
 
-## 🌐 Domain
-
-EdTech | AI-Driven Solutions | Career Development
-
-## 💡 Core Features
-
-- **AI-Generated Roadmaps**: Personalized plans for competitive exams based on user timelines, learning pace, and goals.
-- **Resume Builder**: ATS-friendly editable templates for crafting professional resumes.
-- **Exam Preparation**: AI-generated MCQs from specific topics or user-uploaded PDFs.
-- **Interview Preparation**: An AI bot simulating interview scenarios by asking topic-specific questions and analyzing responses.
-
-## 🌟 Screenshots 📸
-
-**Landing page**
-![WhatsApp Image 2025-01-19 at 20 32 34_5529cfaa](https://github.com/user-attachments/assets/fe2465e6-4b2a-4414-a74b-73079afb8c5c)
-![WhatsApp Image 2025-01-19 at 20 33 21_06bda153](https://github.com/user-attachments/assets/676f3be6-a1a3-4342-9e8f-f90cc8c5b655)
-![WhatsApp Image 2025-01-19 at 20 34 28_6a9cf162](https://github.com/user-attachments/assets/a8765bec-6c67-4be9-9521-ac7cd9b9544e)
-
-**Login And SignUp**
-![WhatsApp Image 2025-01-19 at 20 37 17_86e0611c](https://github.com/user-attachments/assets/4759a9e0-4517-4f35-a731-8e8f92708600)
-![WhatsApp Image 2025-01-19 at 20 37 45_c7e83cc3](https://github.com/user-attachments/assets/e4288e74-e305-4f7f-b392-e8f56a763443)
-
-**Dashboard**
-![image](https://github.com/user-attachments/assets/52cf0fde-8949-416d-921c-74c79660f5e2)
-![image](https://github.com/user-attachments/assets/c4a4fbfe-c652-4dab-98e5-a999714722c9)
-
-**Technical Interview**
-![image](https://github.com/user-attachments/assets/cee322f7-4afa-49fd-a32e-bafb699b693a)
-
-**Roadmap**
-![image](https://github.com/user-attachments/assets/d7f45229-b6cd-4261-a19a-78a5ec14cbf7)
-
-**Exam Prep**
-![image](https://github.com/user-attachments/assets/e8047706-953e-49db-938a-08d96d24014d)
-
-**Resume Builder**
-![image](https://github.com/user-attachments/assets/a66c0315-1bae-4183-880a-94c18677c085)
-
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 
-- Node.js
-- npm
+- Python 3.10+
+- Node.js 16+
 - MongoDB
-- Streamlit
 
 ### Installation
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/vaishnal16/prep-wise.git
-   cd prep-wise
-   ```
+#### Backend Setup
 
-2. Install Frontend Dependencies:
-   ```bash
-   cd frontend
-   npm install
+1. Navigate to the backend directory:
    ```
-
-3. Install Backend Dependencies:
-   ```bash
    cd backend
+   ```
+
+2. Create a virtual environment:
+   ```
+   python -m venv venv
+   ```
+
+3. Activate the virtual environment:
+   - Windows:
+     ```
+     venv\Scripts\activate
+     ```
+   - macOS/Linux:
+     ```
+     source venv/bin/activate
+     ```
+
+4. Install dependencies:
+   ```
+   pip install -r requirements.txt
+   ```
+
+5. Create a `.env` file in the backend directory with the following variables:
+   ```
+   MONGODB_URI=mongodb://localhost:27017/prepwise
+   JWT_SECRET=your_jwt_secret_key
+   JWT_EXPIRES_IN=3600
+   PORT=5000
+   FLASK_ENV=development
+   ```
+
+6. Run the backend server:
+   ```
+   python run.py
+   ```
+
+#### Frontend Setup
+
+1. Navigate to the frontend directory:
+   ```
+   cd frontend
+   ```
+
+2. Install dependencies:
+   ```
    npm install
    ```
 
-4. Start the Application:
-
-   For Frontend:
-   ```bash
+3. Run the development server:
+   ```
    npm run dev
    ```
 
-   For Backend:
-   ```bash
-   npm run dev
-   ```
-   For AI Integration:
-   ```bash
-   cd frontend/src/MockInterview
-   pip install -r requirement.txt
-   streamlit run Mock.py
-   ```
-    ```bash Open New Terminal
-   cd frontend/src/MockInterview
-   streamlit run main.py
-   ```
+## Project Structure
 
-## 🎯 Future Enhancements
+### Backend Structure
+```
+backend/
+├── src/
+│   ├── app.py           # Main Flask application
+│   ├── config/
+│   │   └── db.py        # MongoDB connection
+│   ├── controllers/
+│   │   └── auth_controller.py
+│   ├── middleware/
+│   │   ├── auth.py
+│   │   ├── error_handler.py
+│   │   └── validators.py
+│   ├── models/
+│   │   └── user.py
+│   └── routes/
+│       └── auth_routes.py
+└── run.py               # Application entry point
+```
 
-- Multi-language support for wider accessibility
-- Expanding the roadmap feature to include more exams and industries
-- Cloud infrastructure to support increased user traffic
-- Enhanced AI models for better accuracy
+### Frontend Structure
+```
+frontend/
+├── src/
+│   ├── api/
+│   │   ├── auth.ts      # Authentication API functions
+│   │   ├── client.ts    # Axios client configuration
+│   │   ├── dashboard.ts # Dashboard API functions
+│   │   ├── index.ts     # API exports
+│   │   └── roadmap.ts   # Roadmap API functions
+│   ├── components/
+│   │   └── PrivateRoute.tsx
+│   ├── contexts/
+│   │   └── AuthContext.tsx
+│   ├── pages/
+│   │   ├── AuthPages.tsx
+│   │   ├── Dashboard.tsx
+│   │   ├── LandingPage.tsx
+│   │   └── RoadmapPage.tsx
+│   ├── App.tsx
+│   └── main.tsx
+```
 
-## 🏆 Achievements
+## Authentication Flow
 
-- Successfully developed an AI-powered preparation platform
-- Addressed real-world challenges in career preparation and development
-- Delivered a scalable solution for personalized learning and interview readiness
+1. User registers or logs in through the `/auth` page
+2. Backend validates credentials and returns a JWT token
+3. Frontend stores the token in localStorage
+4. Protected routes check for valid token before rendering
+5. API requests include the token in the Authorization header
 
-## 💪 Impact
+## Development Guidelines
 
-- Empowers users to prepare effectively for exams and interviews
-- Saves time with personalized AI-generated content
-- Enhances job prospects with professional resume templates
-- Increases confidence with interactive tools
+### Type Safety
 
-## 🛠️ Tech Stack
+- Backend uses Python type hints for TypeScript-like type annotations
+- Frontend uses TypeScript interfaces for type safety
+- API responses and requests are typed for better development experience
 
-- **Frontend**: React.js, TypeScript, Tailwind CSS
-- **Backend**: Node.js, Express.js
-- **Database**: MongoDB
-- **AI/ML**: Meta Llama-3.2 LLM for generating roadmaps, MCQs, and interview simulations
-- **Additional Tools**: Streamlit for UI in AI-based features, Shadcn for UI design
+### API Structure
 
-## 🎥 Demo Link
+- All API endpoints are prefixed with `/api`
+- Authentication routes: `/api/login`, `/api/signup`
+- Protected routes require a valid JWT token
 
-[Watch Demo Here](https://drive.google.com/file/d/1eyT8mFQEynVKEjy92XuIg-exx-AgS3zR/view)
+## Deployment
 
-## 🤝 Contributing
+The application can be deployed to any platform that supports Python and Node.js applications. For production deployment, make sure to:
 
-We welcome contributions to PrepWise! Please read our contributing guidelines before submitting pull requests.
+1. Set appropriate environment variables
+2. Configure CORS settings for production domains
+3. Use a production-ready MongoDB instance
+4. Set up proper error logging and monitoring
 
-## 📞 Contact
+## Contributing
 
-For any queries regarding the project, please reach out to:  
-[aryanpatankar27@gmail.com](mailto:aryanpatankar27@gmail.com),  
-[vaishnal16305@gmail.com](mailto:vaishnal16305@gmail.com),
-[nirajsk10912@gmail.com](mailto:nirajsk10912@gmail.com) 
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Submit a pull request
+
+## License
+
+This project is licensed under the MIT License.
