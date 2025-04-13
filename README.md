@@ -1,6 +1,6 @@
 # PrepWise - Career Preparation Platform
 
-PrepWise is a career preparation and interview skills platform that helps users prepare for job interviews and develop their professional skills.
+PrepWise is an AI-powered career preparation platform that delivers personalized roadmaps to help users navigate and achieve their career goals efficiently..
 
 ## Project Overview
 
